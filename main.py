@@ -1,81 +1,12 @@
 # This is a sample Python script.
-'''
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-
-
-
-from flask import Flask, render_template, request, redirect, url_for
-
-#from werkzeug.utils import redirect
-
-app = Flask(__name__)
-
-
-@app.route('/')
-@app.route("/", methods=["GET", "POST"])
-def data():
-    print("ghm")
-    if request.method == "POST":
-        print("abh")
-        req = request.form
-
-        firstname = req.get("fname")
-        lastname = req.get("lname")
-        email = req.get("email")
-        phn=req.get("phn")
-        SState=req.get("ss")
-        SCity=req.get("sc")
-        DState=req.get("ds")
-        DCity=req.get("dc")
-        Aadhno=req.get("aan")
-        print(firstname)
-        return redirect(request.url)
-
-    return render_template("data.html")
-
-
-
-if __name__ == '__main__':
-    app.run()
-
-
-from flask import Flask, render_template, request
-app = Flask(__name__)
-@app.route('/')
-def student():
-   return render_template('data.html')
-
-
-@app.route('/result',methods = ['POST', 'GET'])
-def result():
-   if request.method == 'POST':
-      result = request.form
-      print(result)
-      return render_template("result.html",result = result)
-
-
-if __name__ == '__main__':
-   app.run(debug = True)'''
+ 
 
 import requests
 from flask import Flask, render_template, request
 from twilio.rest import Client
 
-account_sid = 'AC6b8eea9ea7c855ff768347ef6f16bac5'
-auth_token = '874965f2b9e415ab48cb2209c546484a'
+account_sid = ''
+auth_token = ''
 client = Client(account_sid, auth_token)
 app = Flask(__name__)
 
