@@ -43,25 +43,7 @@ form{
     padding-top: 5%;
     padding-bottom: 5%;
 }</style>
-    <script>
-function check()
-{
-  var phno = document.forms["n1"]["Phone_number"];
-  var aadh = document.forms["n1"]["id_proof"];
-  var phoneno = /^\d{10}$/;
-  var aadhar = /^\d{12}$/;
-  if((phno.value.match(phoneno) && aadh.value.match(aadhar))
-        {
-      return true;
-        }
-      else
-        {
-        alert("Please enter valid phone number and aadhar number");
-        return false;
-        }
-}
-
-</script>
+    
 </head>
 <body onload="document.body.style.opacity='1'">
 <div class="w3-container w3-center w3-animate-top">
