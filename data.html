@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travelling</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>input[type=text], select {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+body {
+    opacity: 0;
+    transition: opacity 2s;
+        }
+div {
+  border-radius: 5px;
+    padding-top: 5%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+form{
+    border-color: black;
+    border-width: 10px;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}</style>
+    <script>
+function check()
+{
+  var phno = document.forms["n1"]["Phone_number"];
+  var aadh = document.forms["n1"]["id_proof"];
+  var phoneno = /^\d{10}$/;
+  var aadhar = /^\d{12}$/;
+  if((phno.value.match(phoneno) && aadh.value.match(aadhar))
+        {
+      return true;
+        }
+      else
+        {
+        alert("Please enter valid phone number and aadhar number");
+        return false;
+        }
+}
+
+</script>
+</head>
+<body onload="document.body.style.opacity='1'">
+<div class="w3-container w3-center w3-animate-top">
+<div>
+<h1 style="text-align:center">Please enter your details and travel information</h1>
+<form action="http://localhost:5000/result", method="POST" style="text-align:center" name="n1" >
+    <label>First Name</label><br>
+    <input type="text" id="first_name" name="first_name"><br>
+    <label>Last Name</label><br>
+    <input type="text" id="last_name" name="last_name"><br>
+    <label>Email</label><br>
+    <input type="text" id="email" name="email"><br>
+    <label>Phone Number</label><br>
+    <input type="tel" id="Phone_number" name="Phone_number" pattern="[6-9]{1}[0-9]{9}"><br>
+    <label>Source State</label><br>
+    <input type="text" id="Source_state" name="Source_state"><br>
+    <label>Source City</label><br>
+    <input type="text" id="Source_city" name="Source_city"><br>
+    <label>Destination State</label><br>
+    <input type="text" id="Destination_state" name="Destination_state"><br>
+    <label>Destination City</label><br>
+    <input type="text" id="Destination_city" name="Destination_city"><br>
+    <label>Aadhaar number</label><br>
+    <input type="text" id="id_proof" name="id_proof" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}"><br>
+    <label>Date</label><br>
+    <input type="date" name="date" placeholder="DD-MM-YYYY" value="" min="1997-01-01" max="2030-12-31"><br><br>
+    <button type="submit" class="btn btn-primary" >Send</button>
+</form>
+</div>
+</div>
+</body>
+</html>

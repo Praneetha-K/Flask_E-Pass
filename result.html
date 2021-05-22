@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>E-pass</title>
+    <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.c{
+text-align: center;
+}
+</style>
+</head>
+<body>
+<center>
+  <table border = 1 id="customers">
+    {% for key, value in result.items() %}
+
+    <tr>
+       <td class="c"> {{ key }} </td>
+       <td class="c"> {{ value }} </td>
+    </tr>
+
+    {% endfor %}
+      <h1>Slot {{var}}!</h1>
+ </table>
+</center>
+</body>
+</html>
